@@ -1,6 +1,6 @@
 {
   "name": "player-wc",
-  "description": "Webcomponent player-wc following open-wc recommendations",
+  "description": "Webcomponent player-wc is an audio player that following open-wc recommendations",
   "license": "MIT",
   "author": "player-wc",
   "version": "0.0.0",
@@ -17,7 +17,7 @@
     "storybook:build": "npm run analyze -- --exclude dist && build-storybook"
   },
   "dependencies": {
-    "@shoelace-style/shoelace": "^2.0.0-beta.63",
+    "babel-eslint": "^10.1.0",
     "lit": "^2.0.2"
   },
   "devDependencies": {
@@ -35,10 +35,14 @@
   },
   "customElements": "custom-elements.json",
   "eslintConfig": {
+    "parser": "babel-eslint",
     "extends": [
-      "@open-wc",
+      "@open-wc/eslint-config",
       "prettier"
-    ]
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2020
+    }
   },
   "prettier": {
     "singleQuote": true,

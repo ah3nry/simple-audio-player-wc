@@ -1,12 +1,12 @@
 let throttleTimer;
 
 export const throttle = (callback, time) => {
-    if (throttleTimer) return;
+  if (throttleTimer) return;
 
-    throttleTimer = true;
+  throttleTimer = true;
 
-    setTimeout(() => {
-        callback();
-        throttleTimer = false;
-    }, time);
-}
+  setTimeout(() => {
+    callback();
+    throttleTimer = false;
+  }, time);
+};

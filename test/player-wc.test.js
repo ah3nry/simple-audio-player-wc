@@ -19,7 +19,9 @@ describe('PlayerWc', () => {
   });
 
   it('can override the title via attribute', async () => {
-    const el = await fixture(html`<player-wc title="attribute title"></player-wc>`);
+    const el = await fixture(
+      html`<player-wc title="attribute title"></player-wc>`
+    );
 
     expect(el.title).to.equal('attribute title');
   });
