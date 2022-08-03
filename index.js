@@ -1,1 +1,1 @@
-export { PlayerWc } from './src/PlayerWc.js';
+export { AudioPlayerWc } from './src/AudioPlayerWc.js';

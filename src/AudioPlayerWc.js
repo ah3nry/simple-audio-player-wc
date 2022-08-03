@@ -2,20 +2,19 @@ import { LitElement, html, css, svg } from 'lit';
 import { styleMap } from 'lit/directives/style-map.js';
 import { throttle } from './utils.js';
 import './ProgressRing.js';
-import playerStyles from './PlayerWc.styles.js';
+import playerStyles from './AudioPlayerWc.styles.js';
 
 const SIMPLE_AUDIO_PLAYER = 'simple-audio-player';
 
 /**
  * Simple audio player element.
  *
- * @slot - This element has a slot
- * @csspart button - The button
+ *
  * @cssproperty --background-color - element background color
  * @cssproperty --primary-color - element primary color
  * @cssproperty --gutter-color - element gutter color
  */
-export class PlayerWc extends LitElement {
+export class AudioPlayerWc extends LitElement {
   static styles = playerStyles;
 
   static properties = {

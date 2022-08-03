@@ -1,3 +1,3 @@
-import { PlayerWc } from './src/PlayerWc.js';
+import { AudioPlayerWc } from './src/AudioPlayerWc.js';
 
-window.customElements.define('player-wc', PlayerWc);
+window.customElements.define('audio-player-wc', AudioPlayerWc);

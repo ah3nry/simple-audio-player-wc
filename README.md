@@ -12,10 +12,10 @@ npm i player-wc
 
 ```html
 <script type="module">
-  import 'player-wc/player-wc.js';
+  import 'player-wc/audio-player-wc.js';
 </script>
 
-<player-wc></player-wc>
+<audio-player-wc></audio-player-wc>
 ```
 
 ## Linting and formatting
