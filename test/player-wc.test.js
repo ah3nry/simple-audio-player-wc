@@ -4,26 +4,12 @@ import { fixture, expect } from '@open-wc/testing';
 import '../player-wc.js';
 
 describe('PlayerWc', () => {
-  it('has a default title "Hey there" and counter 5', async () => {
+  it('renders button with the play icon', async () => {
     const el = await fixture(html`<player-wc></player-wc>`);
 
-    expect(el.title).to.equal('Hey there');
-    expect(el.counter).to.equal(5);
-  });
-
-  it('increases the counter on button click', async () => {
-    const el = await fixture(html`<player-wc></player-wc>`);
-    el.shadowRoot.querySelector('button').click();
-
-    expect(el.counter).to.equal(6);
-  });
-
-  it('can override the title via attribute', async () => {
-    const el = await fixture(
-      html`<player-wc title="attribute title"></player-wc>`
-    );
-
-    expect(el.title).to.equal('attribute title');
+    expect(
+      el.shadowRoot.querySelector('svg').getAttribute('data-testid')
+    ).to.equal('play-icon');
   });
 
   it('passes the a11y audit', async () => {

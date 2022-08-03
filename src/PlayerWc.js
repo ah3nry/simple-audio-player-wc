@@ -1,7 +1,6 @@
 import { LitElement, html, css, svg } from 'lit';
 import { styleMap } from 'lit/directives/style-map.js';
 import { throttle } from './utils.js';
-// import '../node_modules/@shoelace-style/shoelace/dist/components/progress-ring/progress-ring.js';
 import './ProgressRing.js';
 import playerStyles from './PlayerWc.styles.js';
 
@@ -80,8 +79,8 @@ export class PlayerWc extends LitElement {
 
   render() {
     const styles = {
-      width: this.hasProgressRing ? css`calc(100% - 20px)` : '100%',
-      height: this.hasProgressRing ? css`calc(100% - 20px)` : '100%',
+      width: this.hasProgressRing ? css`calc(100% - 5px)` : '100%',
+      height: this.hasProgressRing ? css`calc(100% - 5px)` : '100%',
     };
 
     return html`
@@ -105,13 +104,22 @@ export class PlayerWc extends LitElement {
           id="${SIMPLE_AUDIO_PLAYER}-btn"
           @click=${this.toggle}
           style=${styleMap(styles)}
+          aria-label=${this.isPlaying ? 'pause' : 'play'}
         >
           ${this.isPlaying
             ? svg`
-             <svg role="img" fill="currentColor" viewBox="1 1 14 14" class="icon"><path fill="none" d="M0 0h16v16H0z"></path><path d="M3 2h3v12H3zm7 0h3v12h-3z"></path></svg>
+             <svg data-testid="pause-icon" role="img" fill="currentColor" viewBox="1 1 14 14" class="icon">
+              <title>Pause</title>
+              <path fill="none" d="M0 0h16v16H0z"></path><path d="M3 2h3v12H3zm7 0h3v12h-3z">
+              </path>
+             </svg>
            `
             : svg`
-             <svg role="img" fill="currentColor" viewBox="1 1 14 14" class="icon"><path d="M4.018 14L14.41 8 4.018 2z"></path></svg>
+             <svg data-testid="play-icon" role="img" fill="currentColor" viewBox="1 1 14 14" class="icon">
+              <title>Play</title>
+              <path d="M4.018 14L14.41 8 4.018 2z">
+              </path>
+             </svg>
          `}
         </button>
       </div>

@@ -1,11 +1,16 @@
 {
   "name": "player-wc",
-  "description": "Webcomponent player-wc is an audio player that following open-wc recommendations",
+  "description": "Webcomponent player-wc is an audio player that follows open-wc recommendations",
   "license": "MIT",
-  "author": "player-wc",
-  "version": "0.0.0",
+  "author": "ah3nry",
+  "version": "0.0.1",
   "main": "index.js",
   "module": "index.js",
+  "files": [
+    "index.js",
+    "src/",
+    "player-wc.js"
+  ],
   "scripts": {
     "analyze": "cem analyze --litelement",
     "start": "web-dev-server",

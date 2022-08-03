@@ -32,6 +32,11 @@ export default css`
     border-radius: 50%;
     grid-column: 1;
     grid-row: 1;
+    padding: 10px;
+  }
+
+  button:hover {
+    mix-blend-mode: darken;
   }
 
   .icon {
