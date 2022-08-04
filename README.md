@@ -2,9 +2,9 @@
 
 A simple audio player web component.
 
-<img src="./demo/play.png" alt="play button" width="23%">
+<img width="87" alt="Screenshot 2022-08-04 at 12 05 52" src="https://user-images.githubusercontent.com/2929988/182858609-dabb3754-e777-478c-94e5-e9917172a0bf.png">
+<img width="93" alt="Screenshot 2022-08-04 at 12 18 22" src="https://user-images.githubusercontent.com/2929988/182858653-581268fd-303a-4758-866b-75a84ad6c378.png">
 
-<img src="./demo/pause.png" alt="pause button" width="25%">
 
 ## Installation
 
