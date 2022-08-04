@@ -1,4 +1,4 @@
-# \<player-wc>
+# \<audio-player-wc>
 
 A simple audio player web component.
 
@@ -9,10 +9,11 @@ npm i player-wc
 ```
 
 ## Usage
+See [demo]('./demo/index.js')
 
 ```html
 <script type="module">
-  import 'player-wc/audio-player-wc.js';
+  import 'audio-player-wc/player-wc';
 </script>
 
 <audio-player-wc></audio-player-wc>

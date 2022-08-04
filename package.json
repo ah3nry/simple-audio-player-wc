@@ -3,13 +3,14 @@
   "description": "Webcomponent player-wc is an audio player that follows open-wc recommendations",
   "license": "MIT",
   "author": "ah3nry",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "index.js",
   "module": "index.js",
   "files": [
     "index.js",
     "src/",
-    "player-wc.js"
+    "player-wc.js",
+    "demo/"
   ],
   "scripts": {
     "analyze": "cem analyze --litelement",
