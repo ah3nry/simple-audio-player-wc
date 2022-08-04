@@ -15,7 +15,7 @@ yarn add audio-player-wc
 ```
 
 ## Usage
-See [demo](./demo/index.html)
+See [demo](https://github.com/ah3nry/simple-audio-player-wc/blob/main/demo/index.html)
 
 ```html
 <script type="module">
