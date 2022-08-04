@@ -2,14 +2,20 @@
 
 A simple audio player web component.
 
+<img src="./demo/play.png" alt="play button" width="23%">
+
+<img src="./demo/pause.png" alt="pause button" width="25%">
+
 ## Installation
 
 ```bash
-npm i player-wc
+npm i audio-player-wc
+
+yarn add audio-player-wc
 ```
 
 ## Usage
-See [demo]('./demo/index.js')
+See [demo](./demo/index.html)
 
 ```html
 <script type="module">
@@ -49,17 +55,7 @@ npm run test:watch
 
 ## Demoing with Storybook
 
-To run a local instance of Storybook for your component, run
-
-```bash
-npm run storybook
-```
-
-To build a production version of Storybook, run
-
-```bash
-npm run storybook:build
-```
+TODO
 
 
 ## Tooling configs
