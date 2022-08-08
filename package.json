@@ -3,9 +3,14 @@
   "description": "Webcomponent player-wc is an audio player that follows open-wc recommendations",
   "license": "MIT",
   "author": "ah3nry",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "index.js",
   "module": "index.js",
+  "homepage": "https://github.com/ah3nry/simple-audio-player-wc/blob/main/README.md",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/ah3nry/simple-audio-player-wc"
+  },
   "files": [
     "index.js",
     "src/",
