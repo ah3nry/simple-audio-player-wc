@@ -9,7 +9,8 @@ const SIMPLE_AUDIO_PLAYER = 'simple-audio-player';
 /**
  * Simple audio player element.
  *
- *
+ * @property {String} src - audio source
+ * @property {Boolean} hasProgressRing - show progress ring
  * @cssproperty --background-color - element background color
  * @cssproperty --primary-color - element primary color
  * @cssproperty --gutter-color - element gutter color
@@ -25,11 +26,13 @@ export class AudioPlayerWc extends LitElement {
     currentTime: { type: Number, state: true }, // not public
     progress: { type: Number, state: true }, // not public
     hasProgressRing: { type: Boolean, attribute: true },
+    delay: { type: Number },
   };
 
   constructor() {
     super();
     this.hasProgressRing = false;
+    this.delay = 0;
   }
 
   connectedCallback() {
@@ -51,29 +54,41 @@ export class AudioPlayerWc extends LitElement {
     this.progressRingSize = `${this.renderRoot?.firstElementChild?.offsetHeight}px`;
   }
 
+  dispatchStatusEvent({ endOfTrack = false } = {}) {
+    const customEvent = new CustomEvent(SIMPLE_AUDIO_PLAYER, {
+      bubbles: true,
+      composed: true,
+      detail: {
+        player: this,
+        isPlaying: this.isPlaying,
+        playbackPosition: this.sound.currentTime,
+        endOfTrack,
+      },
+    });
+    this.dispatchEvent(customEvent);
+  }
+
   endOfTrack() {
     this.isPlaying = false;
     this.sound.currentTime = 0;
     this.progress = 0;
+    this.dispatchStatusEvent({ endOfTrack: true });
   }
 
   toggle() {
     this.isPlaying = !this.isPlaying;
     if (this.isPlaying) {
-      this.sound.play();
-      const customEvent = new CustomEvent(SIMPLE_AUDIO_PLAYER, {
-        bubbles: true,
-        composed: true,
-        detail: {
-          player: this,
-          playerId: this.id,
-          isPlaying: this.isPlaying,
-        },
-      });
-      this.dispatchEvent(customEvent);
+      if (this.sound.currentTime === 0) {
+        setTimeout(() => {
+          this.sound.play();
+        }, this.delay);
+      } else {
+        this.sound.play();
+      }
     } else {
       this.sound.pause();
     }
+    this.dispatchStatusEvent();
   }
 
   render() {
